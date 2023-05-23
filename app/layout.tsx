@@ -25,18 +25,9 @@ export default function RootLayout({
                 <li className="mr-6">
                   <Link
                     className="text-blue-500 hover:text-blue-800"
-                    href="/about"
+                    href="/users"
                   >
-                    About
-                  </Link>
-                </li>
-
-                <li className="mr-6">
-                  <Link
-                    className="text-blue-500 hover:text-blue-800"
-                    href="/other"
-                  >
-                    Other
+                    Users
                   </Link>
                 </li>
               </ul>
