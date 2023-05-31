@@ -1,16 +1,5 @@
-type Result = {
-  pageid: string;
+type BlogPost = {
+  id: string;
   title: string;
-  extract: string;
-  thumbnail?: {
-    source: string;
-    width: string;
-    height: string;
-  };
-};
-
-type SearchResult = {
-  query?: {
-    pages?: Result[];
-  };
+  data: string;
 };
