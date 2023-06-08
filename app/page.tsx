@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import Posts from "./components/Posts";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -11,7 +11,6 @@ export default function Home() {
           I am <span className="font-bold">Nasir</span>
         </span>
       </p>
-      <Posts />
     </main>
   );
 }
