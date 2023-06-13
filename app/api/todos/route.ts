@@ -1,16 +1,23 @@
 import { Todo } from "@/models/todo.model";
 import { NextResponse } from "next/server";
+import { todo } from "node:test";
 import { json } from "stream/consumers";
 
 const DATA_SOURCE_URL = `${process.env.DATA_BASE_URL}/todos`;
 
 // GET should be UPPER Case, other wise won't work
-export async function GET() {
+export async function GET(request: Request) {
+  const origin = request.headers.get("origin");
   const res = await fetch(DATA_SOURCE_URL, {
     method: "GET",
   });
   const todos: Todo[] = await res.json();
-  return NextResponse.json(todos);
+  return new NextResponse(JSON.stringify(todos), {
+    headers: {
+      "Access-Control-Allow-Origin": origin || "*",
+      "Content-Type": "application/json",
+    },
+  });
 }
 
 export async function DELETE(request: Request) {
